@@ -173,3 +173,8 @@ public class Main {
         return sign;
     }
 }
+
+//Random gen = new Random();
+//int k = gen.nextInt(21) - 10 // от -10 до 10
+//в скобках количество чисел
+// после скобок прибавляем левую границу диапазона
