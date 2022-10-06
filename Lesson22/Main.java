@@ -33,11 +33,24 @@ public class Main {
         }
         return buf.toString();
     }
+    public static boolean isDigit(String str, int i){
+       return '0' <= str.charAt(i) &&  str.charAt(i)<= '9';
+    }
+    public static int taskString13(String str){
+        int k = 0;
+        for(int i = 0; i < str.length(); i++){
+            if (isDigit(str,i)) {
+                k++;
+            }
+        }
+        return k;
+    }
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         //String1. Дан символ C. Вывести его код (то есть номер в кодовой таблице).
         /*char c;
-        //c = in.nextLine().charAt(0);
+        c = in.nextLine().charAt(0);
         c = '\u00AE';
         System.out.println(c);
         System.out.println((int)c);*/
@@ -63,7 +76,10 @@ public class Main {
         // большими
 
         String str = in.nextLine();
-        System.out.println(task1(str));
-        System.out.println(task2(str));
+        //System.out.println(task1(str));
+        //System.out.println(task2(str));
+        //String13. Дана строка. Подсчитать количество
+        //содержащихся в ней цифр.
+        System.out.println(taskString13(str));
     }
 }
