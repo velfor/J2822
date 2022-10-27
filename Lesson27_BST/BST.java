@@ -31,19 +31,24 @@ public class BST<T extends Comparable<T>> implements BinaryTree<T> {
     }
 
     private Node<T> insert(Node<T> root, T data) {
-        if (isEmpty()) {
+        if (root == null) {
             return new Node<T>(data);
-        } else if (root.data.compareTo(data) < 0) {
+        } else if (data.compareTo(root.data) < 0) {
             root.left = insert(root.left, data);
-        } else if (root.data.compareTo(data) > 0) {
+        } else if (data.compareTo(root.data) > 0) {
             root.right = insert(root.right, data);
         } else {
-            //
+            // в дереве нашелся элемент равый data
         }
         return root;
     }
 
     @Override
+    public T findMin(){
+        Node<T> temp = findMin(root);
+        return temp.data;
+    }
+
     public Node<T> findMin(Node<T> root) {
         Node<T> curr = root;
         while(curr.left != null){
@@ -65,6 +70,7 @@ public class BST<T extends Comparable<T>> implements BinaryTree<T> {
     public void delete(T data) {
         root = delete(root, data);
     }
+
     private Node<T> delete(Node<T> root, T data){
         if (root == null)
             return root;
@@ -93,6 +99,7 @@ public class BST<T extends Comparable<T>> implements BinaryTree<T> {
     public boolean contains(T data) {
         return contains(root, data);
     }
+
     private boolean contains(Node<T> root, T data)
     {
         if (root == null){
@@ -107,5 +114,24 @@ public class BST<T extends Comparable<T>> implements BinaryTree<T> {
         else{
             return true;
         }
+    }
+
+    @Override
+    public void inorder() {
+       inorder(root);
+    }
+
+    private void inorder(Node<T> root){
+        if (root == null) return;
+        inorder(root.left);
+        System.out.println(root.data + " ");
+        inorder(root.right);
+    }
+
+    void preorder(Node<T> root){
+        if (root == null) return;
+        System.out.println(root.data + " ");
+        preorder(root.left);
+        preorder(root.right);
     }
 }
