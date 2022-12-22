@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        int v = (new Random()).nextInt(10);
+        /*int v = (new Random()).nextInt(10);
         System.out.println(v);
         MyThread3 r4 = new MyThread3(v);
         Thread t4 = new Thread(r4);
@@ -24,6 +24,12 @@ public class Main {
         }
         catch(InterruptedException ex){
 
+        }*/
+        Random r = new Random();
+        MySemaphore ms = new MySemaphore(r.nextInt(2000)+1000);
+        for(int i = 0; i < 20; i++){
+            Thread t = new Thread(ms);
+            t.start();
         }
     }
 }
