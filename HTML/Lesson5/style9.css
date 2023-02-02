@@ -1,0 +1,15 @@
+#elem1 {
+	width: 100px;
+	height: 100px;
+	background: #49f153;
+	margin-bottom: 20px;
+}
+
+#elem2 {
+	width: 100px;
+	height: 100px;
+	background: #49f153;
+	padding: 25px; /* задаем отступы */
+	border: 10px solid green;  /* задаем границу */
+	box-sizing: border-box;  /* убираем расширение */
+}
