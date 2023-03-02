@@ -1,0 +1,19 @@
+body {
+
+	background-image: url("screen.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	display: flex;
+}
+div{
+	margin: auto;
+	color: white;
+	width: 450px;
+	background-image: url("text.jpg");
+	padding: 1em 3em;
+	opacity: 0.8;
+}
+p{
+	opacity: 1.0;
+}
