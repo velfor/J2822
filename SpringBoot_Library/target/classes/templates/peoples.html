@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+a th:href="@{/all_people_new}">Получить people новым способом</a>
+
+
+<a th:href="@{/all_people}">Вся книга</a>
+<br />
+<a th:href="@{/add_people}">Добавить</a>
+<br />
+<h1 th:text="${additionalValue}" />
+<table>
+    <thead>
+    <tr>
+        <th> fio </th>
+        <th> phone </th>
+        <th> email </th>
+        <th> href </th>
+        <th> description </th>
+        <th> action </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${peoples.empty}">
+        <td colspan="2"> No Peoples Available </td>
+    </tr>
+    <tr th:each="people : ${peoples}">
+        <td><span th:text="${people.fio}"> fio </span></td>
+        <td><span th:text="${people.phone}"> phone </span></td>
+        <td><span th:text="${people.email}"> email </span></td>
+        <td><span th:text="${people.href}"> href </span></td>
+        <td><span th:text="${people.description}"> description </span></td>
+        <td><a th:href="@{/find/{id}(id=${people.id})}"> Подробнее </a></td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
