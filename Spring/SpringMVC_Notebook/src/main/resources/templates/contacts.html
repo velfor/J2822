@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список контактов</title>
+</head>
+<body>
+
+    <table>
+        <thead>
+        <tr>
+            <th> Name </th>
+            <th> Phone </th>
+            <th> Email </th>
+            <th> Blog </th>
+            <th> Description(action) </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${contacts.empty}">
+            <td colspan="2"> No Contacts Available </td>
+        </tr>
+        <tr th:each="contact : ${contacts}">
+            <td><span th:text="${contact.fio}"> Name </span></td>
+            <td><span th:text="${contact.phone}"> Phone </span></td>
+            <td><span th:text="${contact.email}"> Email </span></td>
+            <td><span th:text="${contact.href}"> Blog </span></td>
+            <!--<td><span th:text="${contact.description}"> Description </span></td>-->
+            <td> <a th:href="@{/find/{id}(id = ${contact.id})}"> Description </a> </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

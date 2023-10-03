@@ -1,0 +1,9 @@
+#list1{
+	list-style-type: square;
+}
+#list2{
+	list-style-type: circle;
+}
+#list3{
+	list-style-type: none;
+}

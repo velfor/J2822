@@ -1,0 +1,3 @@
+insert into USERS (id, fio, phone, email, href, description) values (1, 'Brose Perroni', 'Perroni', 'bperroni0@zdnet.com', '111', '111');
+insert into USERS (id, fio, phone, email, href, description) values (2, 'Willie Duce', 'Duce', 'wduce1@prlog.org', '111', '111');
+insert into USERS (id, fio, phone, email, href, description) values (3, 'Mattie Davids', 'Davids', 'mdavids2@123-reg.co.uk', '111', '111');

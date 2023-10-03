@@ -1,0 +1,33 @@
+h1{
+	text-align: center;
+	font-size: 50px;
+}
+
+h2{
+	width: 300px;
+	text-align: center;
+	font-style: italic;
+	font-size: 40px;
+	font-weight: normal;
+}
+
+table{
+	width: 500px;
+}
+
+th{
+	text-align: left;
+}
+
+td{
+	text-align: center;
+}
+
+p{
+	width: 300 px;
+	text-align: justify;
+	font-size: 30px;
+}
+
+
+

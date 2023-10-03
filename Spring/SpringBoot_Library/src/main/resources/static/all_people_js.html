@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    // 1. Создаём новый XMLHttpRequest-объект
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', '/all_people_new');
+    xhr.send();
+    // 4. Этот код сработает после того, как мы получим ответ сервера
+    xhr.onload = function() {
+        if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
+            alert(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
+        } else { // если всё прошло гладко, выводим результат
+            let persons = JSON.parse(xhr.responseText);
+            alert(persons.length);
+
+        }
+    };
+
+    xhr.onerror = function() {
+        alert("Запрос не удался");
+    };
+</script>
+
+</body>
+</html>

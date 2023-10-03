@@ -1,0 +1,9 @@
+body > ul > li{
+	list-style-type: none;
+}
+body > ul > li:before{
+	content: ">";
+}
+li > ul{
+	list-style-image: url('icons/winter_16.png');
+}
